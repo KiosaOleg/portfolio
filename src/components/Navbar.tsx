@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, Sun, Moon, Menu, X } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
@@ -8,13 +8,18 @@ import { useTheme } from "./ThemeProvider";
 export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const isDark = theme === "dark";
+  const [mounted, setMounted] = useState(false);
+  const isDark = mounted && theme === "dark";
   const links = ["Projects", "About", "Contact"];
   const socialLinks = [
     { icon: Github, href: "https://github.com", label: "GitHub" },
     { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
     { icon: Mail, href: "mailto:your.email@example.com", label: "Email" },
   ];
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <motion.nav
