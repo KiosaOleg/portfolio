@@ -21,7 +21,7 @@ export default async function Home() {
               My Projects
             </h2>
             <p className="mx-auto max-w-2xl text-lg text-[var(--text-secondary)]">
-              Here are some of my recent projects from GitHub. These are automatically updated from my repositories.
+              GitHub repositories, collaborations, and selected commercial work — updated automatically every hour.
             </p>
           </div>
 
